@@ -64,7 +64,7 @@ export const AddExpense = ({ open, handleClose, defaultBudgetId }) => {
       <Modal open={open}>
         <Container onSubmit={handleSubmit}>
           <Header>
-            <h1>New Budget</h1>
+            <h1>Add Expense</h1>
             <Button onClick={handleClose}>
               <CloseIcon />
             </Button>

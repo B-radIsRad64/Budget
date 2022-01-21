@@ -12,17 +12,17 @@ const ButtonContainer = styled.div`
   align-items: center;
   padding-right: 15px;
   height: 70px;
-  width: 300px;
+  width: 280px;
 `
-export const CardButtons = ({ onAddExpenseClick, onViewExpensesClick, color }) => {
+export const CardButtons = ({ onAddExpenseClick, onViewExpensesClick }) => {
   
   return (
     <Container>
       <ButtonContainer>
-        <Bttn onClick={onAddExpenseClick} variant='outlined' color={color}>
+        <Bttn onClick={onAddExpenseClick} variant='outlined'>
           Add Expense
         </Bttn>
-        <Bttn onClick={onViewExpensesClick} variant='outlined' color={color}>
+        <Bttn onClick={onViewExpensesClick} variant='outlined'>
           View Expenses
         </Bttn>
       </ButtonContainer>

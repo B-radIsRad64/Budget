@@ -11,12 +11,12 @@ const Container = styled.div`
   outline: none;
   margin: 15px;
   background-color: #ffffff;
+  padding: 15px;
 `
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0px 15px;
-  padding: 10px 0px;
+  padding: 20px 15px;
 `
 const Button = styled.button`
   background-color: transparent;
@@ -30,6 +30,20 @@ const MenuContainer = styled.div`
 `
 const FlexContainer = styled.div`
   display: flex;
+  justify-content: space-between;
+  font-size: 32px;
+`
+const ExpensesContainer = styled.div`
+  display: flex;
+`
+const Expense = styled.div`
+  margin-right: 15px;
+`
+const Title = styled.div`
+  margin-right: 15px;
+`
+const Spacer = styled.div`
+  margin-left: 15px;
 `
 export const ViewExpenses = ({ budgetId, handleClose }) => {
   const { getBudgetExpenses, budgets, deleteBudget, deleteExpense } = useBudgets()
@@ -41,13 +55,7 @@ export const ViewExpenses = ({ budgetId, handleClose }) => {
         <Container>
           <Header>
             <FlexContainer>
-             <h1>Expenses - {budget?.name}</h1>
-              {budgetId && (
-                  <Bttn onClick={() => {
-                    deleteBudget(budget)
-                    handleClose()
-                  }} variant="outlined" size="small">Delete</Bttn>
-              )}
+             <Title>Expenses - {budget?.name}</Title>
             </FlexContainer>
             <Button onClick={handleClose}>
               <CloseIcon />
@@ -57,14 +65,24 @@ export const ViewExpenses = ({ budgetId, handleClose }) => {
             {expenses.map(expense => (
                 <MenuItem key={expense.id}>
                   <MenuContainer>
-                    <div>{expense.description}</div>
-                    <div>{currencyFormatter.format(expense.amount)}</div>
+                    <ExpensesContainer>
+                      <Expense>{expense.description}:</Expense>
+                      <div>{currencyFormatter.format(expense.amount)}</div>
+                    </ExpensesContainer>
                     <Bttn onClick={() => deleteExpense(expense)}variant="outlined">
                       <CloseIcon />
                     </Bttn>
                   </MenuContainer>
                 </MenuItem>
             ))}
+            <Spacer>
+              {budgetId && (
+                <Bttn onClick={() => {
+                  deleteBudget(budget)
+                  handleClose()
+                }} variant="outlined" size="small">Delete</Bttn>
+              )}
+            </Spacer>
           </div>
         </Container>
       </Modal>

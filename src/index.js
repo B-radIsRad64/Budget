@@ -22,7 +22,7 @@ const Theme = createTheme({
   },
   typography: {
     button: {
-      fontSize: '1rem',
+      fontSize: '.95rem',
       textTransform: 'none',
     }
   },

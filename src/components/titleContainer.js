@@ -4,20 +4,17 @@ import { currencyFormatter } from '../utilss'
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 15px;
-  font-size: 18px;
-`
-const Name = styled.div`
-  margin-right: 15px;
+  padding: 20px;
+  font-size: 22px;
 `
 export const TitleContainer = ({name, amount, max}) => {
 
   return (
     <Container>
-      <Name>{name}</Name>
+      <div>{name}</div>
       <div>{currencyFormatter.format(amount)} / 
         {max && (
-          <span style={{ fontSize: 15 }}> {currencyFormatter.format(max)}</span>)}
+          <span style={{ fontSize: 18 }}> {currencyFormatter.format(max)}</span>)}
       </div>
     </Container>
   )

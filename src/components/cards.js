@@ -7,7 +7,6 @@ import { CardButtons } from './cardButtons'
 
 const Container = styled.div`
   padding: 15px;
-  font-size: 100px;
 `
 export const Cards = ({ name, amount, max, onAddExpenseClick, onViewExpensesClick, hideButtons }) => {
 
@@ -44,7 +43,7 @@ export const Cards = ({ name, amount, max, onAddExpenseClick, onViewExpensesClic
           <CardButtons 
             onAddExpenseClick={onAddExpenseClick}
             onViewExpensesClick={onViewExpensesClick}
-            color={color} />
+          />
         )}
       </Card>
     </Container>

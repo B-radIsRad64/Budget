@@ -19,11 +19,11 @@ const Header = styled.div`
   padding: 15px;
 `
 const Title = styled.h1`
-  font-size: 40px;
+  font-size: 36px;
   margin: 0;
 `
 const ButtonContainer = styled.div`
-  width: 275px;
+  width: 255px;
   display: flex;
   justify-content: space-between;
 `
